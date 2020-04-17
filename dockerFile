@@ -1,0 +1,20 @@
+FROM openjdk:8u191-jre-alpine3.8
+
+#Workspace
+WORKDIR /usr/share/udemy
+
+#ADD all jar files under target folder to Host in to this image
+ADD target/selenium-docker.jar selenium-docker.jar
+ADD target/selenium-docker-tests.jar selenium-docker-tests.jar
+ADD target/libs libs
+
+#if in-case of any other dependencies like .csv/.json/.xlx add it to this
+#ADD suite files, TestNG files
+ADD bookFlightModule.xml book-Filght-module.xml
+ADD search-module.xml search-module.xml
+
+#BROWSER
+#HUB_HOST
+#MODUlE
+
+ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-test.jar:libs/* -DBRWOSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG $MODULE
