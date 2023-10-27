@@ -6,7 +6,8 @@
 
     <groupId>com.udemy.selenium.docker</groupId>
     <artifactId>selenium-docker</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>Testing</version>
+	<packaging>war</packaging>
 
     <dependencies>
         <dependency>
@@ -24,6 +25,15 @@
     <build>
         <finalName>selenium-docker</finalName>
         <plugins>
+        <plugins>
+		    <plugin>
+		       <artifactId>maven-war-plugin</artifactId>
+               <version>3.4.0</version>
+		       <configuration>
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+               </configuration>
+               <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+		    </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
