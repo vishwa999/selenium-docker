@@ -25,7 +25,6 @@
     <build>
         <finalName>selenium-docker</finalName>
         <plugins>
-        <plugins>
 		    <plugin>
 		       <artifactId>maven-war-plugin</artifactId>
                <version>3.4.0</version>
